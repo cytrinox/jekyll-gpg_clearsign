@@ -3,7 +3,7 @@
 #
 # Author : Rob Smith
 # Repo   : http://github.com/kormoc/jekyll-gpg_clearsign
-# Version: 0.01
+# Version: 0.02
 # License: MIT, see LICENSE file
 #
 
@@ -27,9 +27,12 @@ module GPGClearsign
       end
       
       crypto = GPGME::Crypto.new
-      obj.content = "\n-->\n" + obj.content + "\n<!--\n"
+      print obj.content
+      obj.content.prepend("\n-->\n")
+      obj.content << "\n<!--\n"
       obj.content = (crypto.clearsign obj.content).to_s
-      obj.content = "\n<!--\n" + obj.content + "\n-->\n"
+      obj.content.prepend("\n<!--\n")
+      obj.content << "\n-->\n"
       return
     end
   end

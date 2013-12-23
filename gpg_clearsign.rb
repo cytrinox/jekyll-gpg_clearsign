@@ -3,7 +3,7 @@
 #
 # Author : Rob Smith
 # Repo   : http://github.com/kormoc/jekyll-gpg_clearsign
-# Version: 0.03
+# Version: 0.04
 # License: MIT, see LICENSE file
 #
 

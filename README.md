@@ -22,6 +22,11 @@ To update:
     cd _plugins/gpg_clearsign
     git pull origin master
 
+Set your default layout to use `{{ content | gpg_clearsign }}` vs `{{ content }}`
+or enable it globally via enabling GPGClearsign in `_config.yml`. GPGClearsign
+only works for completely static pages. Any liquid templates will break the
+validation. This is why `{{ content | gpg_clearsign }}` is the recommended usage.
+
 ## Dependencies
 
  * Ruby Gem [gpgme](https://github.com/ueno/ruby-gpgme)
